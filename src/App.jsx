@@ -1,7 +1,6 @@
 import ShortenedLink from "./components/ShortenLink.jsx";
 import Nav from './components/Nav';
 import Hero from "./components/Hero.jsx";
-import RecentLink from "./components/RecentLink.jsx";
 import History from "./components/History.jsx";
 
 function App() {

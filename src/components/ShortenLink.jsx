@@ -28,16 +28,21 @@ export default function ShortenLink() {
 
   const [newList, setNewList] = useState([])
   useEffect(() => {
-    var temp_links = prevURLs;
-    const code = data?.fetched_url?.result.code;
-    const short_link = data?.fetched_url?.result.short_link;
-    const original_link = data?.fetched_url?.result.original_link;
-    if (code!==undefined) {
-      temp_links.push({ code, short_link, original_link });
+    function updateRecents(){
+      var temp_links = prevURLs;
+      const code = data?.fetched_url?.result.code;
+      const short_link = data?.fetched_url?.result.short_link;
+      const original_link = data?.fetched_url?.result.original_link;
+      if (code!==undefined) {
+        temp_links.push({ code, short_link, original_link });
+      }
+      temp_links = [...new Set(temp_links)];
+      localStorage.setItem('urls', JSON.stringify(temp_links));
+      setNewList(temp_links);
+      setPrevURLs(temp_links);
+      console.log(temp_links);
     }
-    temp_links = [...new Set(temp_links)];
-    localStorage.setItem('urls', JSON.stringify(temp_links));
-    setNewList(temp_links);
+    updateRecents();
   }, [data]);
 
   return (
@@ -47,7 +52,10 @@ export default function ShortenLink() {
         <button className="submit-btn" type="submit" onClick={() => (handleSetData(text))}>Go!</button>
       </div>
       {newList.map((url) => (
-          <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
+          <div>
+            <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
+            {console.log(url)}
+          </div>
       ))}
     </div>
   )
