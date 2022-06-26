@@ -182,6 +182,34 @@ nav a{
     background-color: hsl(180, 60%, 40%);
 }
 
+.history-container{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.history-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-btn{
+    background: hsl(180, 66%, 49%);
+    height: 30px;
+    width: 140px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.clear-btn:hover{
+    background-color: hsl(180, 60%, 40%);
+}
+
 @media only screen and (max-width: 720px){
   .recent-link-container {
     display: flex;
@@ -209,6 +237,17 @@ nav a{
   .Links{
     display: none;
   }
+
+  .history-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.history-wrapper{
+    display: flex;
+    flex-direction: column;
+}
 }
 
 .footer-statistics{
