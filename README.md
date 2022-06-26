@@ -5,3 +5,7 @@ This is a React JS application which allows you to shorten URLs using [shrt.co](
 ## Deployed
 
 This app is deployed on Vercel and you check out the hosted version by clicking [here](https://url-shortner-lime.vercel.app/).
+
+## GitHub Repo
+
+GitHub Repo link: [https://github.com/siddxharth/url-shortner](https://github.com/siddxharth/url-shortner)
