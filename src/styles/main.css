@@ -14,7 +14,7 @@ body {
 
 .url-input-container {
     margin: 20px;
-    margin-bottom: 0;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
 }
@@ -59,6 +59,8 @@ nav{
     text-align: center;
     height: 70px;
     font-size: 15px;
+    background-color: hsl(180, 96%, 90%);
+    margin-bottom: 40px;
 }
 
 nav a{
@@ -112,7 +114,6 @@ nav a{
 .hero-heading{
     font-size: 50px;
     font-weight: bold;
-    max-width: 600px;
 }
 
 .hero-sub-heading{
@@ -143,7 +144,7 @@ nav a{
 
 .recent-link-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
     background-color: rgb(245, 245, 245);
     margin: 0 5%;

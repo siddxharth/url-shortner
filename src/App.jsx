@@ -2,7 +2,7 @@ import ShortenedLink from "./components/ShortenLink.jsx";
 import Nav from './components/Nav';
 import Hero from "./components/Hero.jsx";
 import RecentLink from "./components/RecentLink.jsx";
-import Footer from "./components/Footer.jsx";
+import History from "./components/History.jsx";
 
 function App() {
   return (
@@ -10,8 +10,7 @@ function App() {
       <Nav />
       <Hero />
       <ShortenedLink />
-      <RecentLink original_link={"https://reactjs.org/docs/components-and-props.htmlhttps://reactjs.org/docs/components-and-props.html"} short_link={"shrt.co/shrahrths"}/>
-      <Footer />
+      <History />
     </>
   );
 }
