@@ -5,7 +5,6 @@ export default function Hero() {
         <div className='hero-left'>
             <p className='hero-heading'>Shorten URLs Anonymously</p>
             <p className='hero-sub-heading'>With our URL shortner, your URL are 100% anonymous and your information is completely safe with us.</p>
-            <label htmlFor="url-input"><button className='hero-cta-btn'>Get Started</button></label>
         </div>
     </div>
   )
