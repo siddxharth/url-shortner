@@ -1,4 +1,4 @@
-# Shortly - A URL shortner app
+# Shortly - A URL shortener app
 
 This is a React JS application which allows you to shorten URLs using [shrt.co](https://shrtco.de/) API.
 
