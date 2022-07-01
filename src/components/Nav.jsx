@@ -14,7 +14,7 @@ export default function Nav() {
         <div className='nav-right'>
             <ul className='login-signup'>
                 <li><Link className='nav-Link' to="/" onClick={() => alert('This is a dummy link!')}>Login</Link></li>
-                <li><Link className='nav-Link' to="/" onClick={() => alert('This is a dummy link!')}>SignUp</Link></li>
+                <li><Link className='nav-Link-signup' to="/" onClick={() => alert('This is a dummy link!')}>SignUp</Link></li>
             </ul>
         </div>
     </nav>

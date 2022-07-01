@@ -47,6 +47,14 @@ body {
     color: hsl(0, 0%, 55%);
 }
 
+.url-input::before{
+    content: '';
+    background: red;
+    display: block;
+    height: 10px;
+    width: 10px;
+}
+
 .url-input::placeholder{
     color: hsl(0, 0%, 55%);
 }
@@ -64,6 +72,13 @@ nav a{
     color: hsl(0, 0%, 75%);
     font-weight: bold;
     text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover{
+    color: hsl(0, 0%, 40%);
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .nav-icon{
@@ -72,6 +87,20 @@ nav a{
     color: black;
     text-decoration: none;
     margin-right: 2rem;
+    transition: 0s;
+}
+
+.nav-Link-signup{
+    background-color: hsl(180, 66%, 49%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin-left: 15px;
+}
+
+.nav-Link-signup:hover{
+    color: white;
+    background-color: hsl(180, 60%, 40%);
 }
 
 .Links, .login-signup{
