@@ -5,14 +5,14 @@ export default function ShortenLink() {
   const [data, setData] = useState('');
   const [text, setText] = useState('');
   var local_items = localStorage.getItem('urls');
-  const [clearLocal, setClearLocal] = useState(false);
+  // const [clearLocal, setClearLocal] = useState(false);
   const [prevURLs, setPrevURLs] = useState(local_items ? JSON.parse(local_items) : []);
   async function FetchURL(text) {
     if (text === '') {
-      alert("URL cannot be empty!");
+      setError("URL cannot be empty!");
       return;
     } else if (!(text.includes('.'))) {
-      alert('Please enter a valid URL');
+      setError('Please enter a valid URL');
       return;
     }
     var fetched_url = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`).then(
@@ -45,11 +45,18 @@ export default function ShortenLink() {
     updateRecents();
   }, [data]);
 
+  const [error, setError] = useState('');
   return (
     <div>
       <div className='url-input-container'>
         <input className="url-input" type="text" id="url-input" placeholder="Shorten URL" onChange={(e) => { setText(e.target.value); }} />
         <button className="submit-btn" type="submit" onClick={() => (handleSetData(text))}>Go!</button>
+      </div>
+      <div className='error-wrapper'>
+        <div className={`${error===''?'error-msg-hidden':'error-msg'}`}>
+          {error}
+          <div className='close-btn' onClick={() => {setError('')}}>X</div>
+        </div>
       </div>
       <div className="history-wrapper">
         <div className='history-container'>

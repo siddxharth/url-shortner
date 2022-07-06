@@ -10,7 +10,6 @@ export default function RecentLink(props) {
         </span>
         <span className='recent-link-right'>
           <span className='recent-link-short'>{props.short_link}</span>
-          {/* <button className='copy-btn' onClick={() => navigator.clipboard.writeText(props.short_link)}>Copy</button> */}
           <CopyToClipboard text={props.short_link}
           onCopy={() => {alert('Link copied to clipboard!')}}>
           <button className='copy-btn'>Copy</button>

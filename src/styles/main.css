@@ -47,12 +47,42 @@ body {
     color: hsl(0, 0%, 55%);
 }
 
-.url-input::before{
+.error-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 2rem;
+    padding-bottom: 40px;
+}
+
+.error-msg{
+    display: flex;
+    align-items: center;
+    background-color: hsla(16, 100%, 50%, 0.1);
+    width: 40vw;
+    line-height: 1.2rem;
+    padding: 10px;
+    border: 2px solid #ff4500;
+    border-radius: 10px;
+    color: #ff4500;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.close-btn:hover{
+    cursor: pointer;
+}
+
+.error-msg-hidden{
+    display: none;
+}
+
+.url-input-container::after{
     content: '';
     background: red;
-    display: block;
-    height: 10px;
-    width: 10px;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-25px);
 }
 
 .url-input::placeholder{
