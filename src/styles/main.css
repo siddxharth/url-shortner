@@ -237,8 +237,9 @@ nav a:hover{
     border-radius: 5px;
     margin-left: 5px;
 }
-.copy-btn:hover{
+.copy-btn-Copy:hover{
     background-color: hsl(180, 60%, 40%);
+    cursor: pointer;
 }
 
 .copy-btn-Copied{

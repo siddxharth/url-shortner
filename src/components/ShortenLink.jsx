@@ -64,7 +64,7 @@ export default function ShortenLink() {
         </div>
       </div>
       <div>
-        {newList.map((url) => (
+        {newList.reverse().map((url) => (
           <div>
             <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
           </div>
