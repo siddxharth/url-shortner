@@ -228,7 +228,7 @@ nav a:hover{
     margin-left: 5px;
 }
 
-.copy-btn{
+.copy-btn-Copy{
     background: hsl(180, 66%, 49%);
     height: 30px;
     width: 70px;
@@ -239,6 +239,16 @@ nav a:hover{
 }
 .copy-btn:hover{
     background-color: hsl(180, 60%, 40%);
+}
+
+.copy-btn-Copied{
+    background: hsl(180, 60%, 40%);
+    height: 30px;
+    width: 70px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
 }
 
 .history-container{
