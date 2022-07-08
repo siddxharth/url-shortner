@@ -14,6 +14,9 @@ export default function ShortenLink() {
     } else if (!(text.includes('.'))) {
       setError('Please enter a valid URL');
       return;
+    } else if (text.includes('instagram')) {
+      setError('Blacklisted URL. Cannot shorten this one.')
+      return;
     }
     var fetched_url = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`).then(
       response => response.json()
@@ -50,7 +53,7 @@ export default function ShortenLink() {
     <div>
       <div className='url-input-container'>
         <input className="url-input" type="text" id="url-input" placeholder="Shorten URL" onChange={(e) => { setText(e.target.value); }} />
-        <button className="submit-btn" type="submit" onClick={() => (handleSetData(text))}>Go!</button>
+        <button className="submit-btn" type="submit" onClick={() => {setError('');handleSetData(text);}}>Go!</button>
       </div>
       <div className='error-wrapper'>
         <div className={`${error===''?'error-msg-hidden':'error-msg'}`}>
@@ -64,11 +67,11 @@ export default function ShortenLink() {
         </div>
       </div>
       <div>
-        {newList.reverse().map((url) => (
+        {newList.map((url) => (
           <div>
             <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
           </div>
-        ))}
+        )).reverse()}
       </div>
     </div>
   )

@@ -12,8 +12,8 @@ export default function RecentLink(props) {
         <span className='recent-link-right'>
           <span className='recent-link-short'>{props.short_link}</span>
           <CopyToClipboard text={props.short_link}
-          onCopy={() => setCopy('Copied')}>
-          <button className={`copy-btn-${copy}`}>{copy}</button>
+          onCopy={() => {setCopy('Copied!');}}>
+          <button className={`copy-btn-${copy==='Copy'?'copy':'copied'}`}>{copy}</button>
         </CopyToClipboard>
         </span>
       </div>
