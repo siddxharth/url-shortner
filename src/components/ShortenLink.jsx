@@ -53,21 +53,21 @@ export default function ShortenLink() {
     <div>
       <div className='url-input-container'>
         <input className="url-input" type="text" id="url-input" placeholder="Shorten URL" onChange={(e) => { setText(e.target.value); }} />
-        <button className="submit-btn" type="submit" onClick={() => {setError('');handleSetData(text);}}>Go!</button>
+        <button className="submit-btn" type="submit" onClick={() => { setError(''); handleSetData(text); }}>Go!</button>
       </div>
       <div className='error-wrapper'>
-        <div className={`${error===''?'error-msg-hidden':'error-msg'}`}>
+        <div className={`${error === '' ? 'error-msg-hidden' : 'error-msg'}`}>
           {error}
-          <div className='close-btn' onClick={() => {setError('')}}>X</div>
+          <div className='close-btn' onClick={() => { setError('') }}>X</div>
         </div>
       </div>
       <div className="history-wrapper">
         <div className='history-container'>
-          <span>History</span><span><button className='clear-btn' onClick={() => { setNewList([]); setPrevURLs([]); localStorage.clear(); }}>Clear History</button></span>
+          <div>History</div><button className='clear-btn' onClick={() => { setNewList([]); setPrevURLs([]); localStorage.clear(); }}>Clear History</button>
         </div>
       </div>
       <div>
-        {newList.length===0?<div className='empty-url-list'>{"Your shortened URLs will appear here"}</div>:newList.map((url) => (
+        {newList.length === 0 ? <div className='empty-url-list'>{"Your shortened URLs will appear here"}</div> : newList.map((url) => (
           <div>
             <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
           </div>
