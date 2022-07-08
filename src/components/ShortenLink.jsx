@@ -67,7 +67,7 @@ export default function ShortenLink() {
         </div>
       </div>
       <div>
-        {newList.map((url) => (
+        {newList.length===0?<div className='empty-url-list'>{"Your shortened URLs will appear here"}</div>:newList.map((url) => (
           <div>
             <RecentLink key={url.code} original_link={url.original_link} short_link={url.short_link} />
           </div>
