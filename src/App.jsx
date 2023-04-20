@@ -8,7 +8,7 @@ function App() {
     <>
       <Nav />
       <Hero />
-      <ShortenedLink />
+      {/* <ShortenedLink /> */}
       <History />
     </>
   );
