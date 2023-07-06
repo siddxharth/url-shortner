@@ -1,23 +1,23 @@
-# This Dockerfile builds a Docker image for a React.js project
-# using npm packages with Node.js version 16.
+# Use an official Node.js image as the base
+FROM node:16
 
-# Use the official Node.js 16 image as the base image
-FROM node:16-alpine
-
-# Set the working directory to /app
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project files into the container
-COPY . .
+# Copy the package.json and package-lock.json files to the working directory
+COPY package*.json ./
 
-# Install the npm packages
+# Install project dependencies
 RUN npm install
+
+# Copy the entire project to the working directory
+COPY . .
 
 # Build the React app
 RUN npm run build
 
-# Expose the port that the React app will be running on
+# Expose the desired port (e.g., 3000) for accessing the React app
 EXPOSE 3000
 
-# Start the React app
+# Set the command to start the React app when the container starts
 CMD ["npm", "start"]
