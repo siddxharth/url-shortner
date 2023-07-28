@@ -9,18 +9,14 @@ const express_url = process.env.REACT_EXPRESS_URL
 function App() {
   const [currentTime, setCurrentTime] = useState('Current Time');
 
-  const fetchCurrentTime = () => {
-    fetch(express_url)
+  const fetchCurrentTime = async () => {
+    await fetch(express_url)
       .then((response) => response.json())
       .then((data) => {
         setCurrentTime(data.time);
       });
   };
   useEffect(() => {
-    const updateCurrentTime = () => {
-      const time = new Date();
-      setCurrentTime(time);
-    }
     fetchCurrentTime();
     setInterval(fetchCurrentTime, 1000);
   }, []);
