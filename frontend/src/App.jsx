@@ -4,12 +4,13 @@ import Hero from "./components/Hero.jsx";
 import History from "./components/History.jsx";
 import { useEffect, useState } from "react";
 
+const express_url = process.env.REACT_EXPRESS_URL
 
 function App() {
   const [currentTime, setCurrentTime] = useState('Current Time');
 
   const fetchCurrentTime = () => {
-    fetch('http://localhost:3001/time')
+    fetch(express_url)
       .then((response) => response.json())
       .then((data) => {
         setCurrentTime(data.time);
