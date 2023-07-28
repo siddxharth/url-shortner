@@ -3,13 +3,15 @@ import Nav from './components/Nav';
 import Hero from "./components/Hero.jsx";
 import History from "./components/History.jsx";
 import { useEffect, useState } from "react";
+const express_url = process.env.REACT_APP_EXPRESS_URL
 
-const express_url = process.env.REACT_EXPRESS_URL
 
 function App() {
   const [currentTime, setCurrentTime] = useState('Current Time');
 
   const fetchCurrentTime = async () => {
+    // await fetch("http://localhost:3001/time")
+    console.log(express_url);
     await fetch(express_url)
       .then((response) => response.json())
       .then((data) => {
